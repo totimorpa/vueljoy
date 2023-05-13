@@ -1,0 +1,63 @@
+{
+  "question1": {
+    "q": "What is the name of the famous fountain in Rome with a statue of Neptune in the center?",
+    "a": ["Trevi Fountain", "Fontana dei Quattro Fiumi", "Fontana dell'Acqua Paola", "Fontana delle Tartarughe"]
+  },
+  "question2": {
+    "q": "What is the name of the ancient Roman road that runs through the center of Rome?",
+    "a": ["Via Appia", "Via Veneto", "Via del Corso", "Via Tiburtina"]
+  },
+  "question3": {
+    "q": "What is the name of the famous amphitheater in Rome?",
+    "a": ["Colosseum", "Pantheon", "Roman Forum", "Circus Maximus"]
+  },
+  "question4": {
+    "q": "What is the name of the river that flows through Rome?",
+    "a": ["Tiber", "Po", "Arno", "Adige"]
+  },
+  "question5": {
+    "q": "What is the name of the smallest country in the world, located inside Rome?",
+    "a": ["Vatican City", "San Marino", "Andorra", "Liechtenstein"]
+  },
+  "question6": {
+    "q": "What is the name of the famous dome-shaped church in Rome designed by Michelangelo?",
+    "a": ["St. Peter's Basilica", "Santa Maria degli Angeli", "Sant'Ivo alla Sapienza", "San Giovanni in Laterano"]
+  },
+  "question7": {
+    "q": "What is the name of the famous piazza in Rome with a fountain in the center and a Spanish Steps nearby?",
+    "a": ["Piazza di Spagna", "Piazza Navona", "Piazza del Popolo", "Piazza Venezia"]
+  },
+  "question8": {
+    "q": "What is the name of the castle that was originally built as a mausoleum for Emperor Hadrian and later became a papal fortress?",
+    "a": ["Castel Sant'Angelo", "Castello della Magliana", "Castello della Cecchignola", "Castello dell'Acqua Acetosa"]
+  },
+  "question9": {
+    "q": "What is the name of the museum that houses ancient Roman sculptures and artifacts?",
+    "a": ["Capitoline Museums", "Vatican Museums", "Galleria Borghese", "Palazzo Altemps"]
+  },
+  "question10": {
+    "q": "What is the name of the famous street market in Rome?",
+    "a": ["Campo de' Fiori", "Mercato Trionfale", "Mercato Testaccio", "Mercato Centrale"]
+  },
+  "question11": {
+    "q": "What is the name of the famous street in Rome that is lined with luxury shops?",
+    "a": ["Via Condotti", "Via del Babuino", "Via Cola di Rienzo", "Via dei Coronari"]
+  },
+  "question12": {
+    "q": "What is the name of the famous church in Rome that contains the burial place of St. Paul?",
+    "a": ["Basilica di San Paolo fuori le Mura", "Basilica di San Clemente", "Basilica di San Pietro in Vincoli", "Basilica di Santa Maria in Trastevere"]
+  },
+  "question13": {
+    "q": "What is the name of the largest amphitheater ever built, located in Rome?",
+    "a": ["Colosseum", "Pantheon", "Trevi Fountain", "Roman Forum"]
+  },
+  "question14": {
+    "q": "What is the name of the famous fountain in Rome that depicts the god Neptune surrounded by tritons and sea horses?",
+    "a": ["Trevi Fountain", "Fontana dell'Acqua Paola", "Fontana del Tritone", "Fontana delle Naiadi"]
+  },
+  "question15": {
+    "q": "What is the name of the castle located in the heart of Rome, which was built by the Roman Emperor Hadrian in the second century AD?",
+    "a": ["Castel Sant'Angelo", "Palazzo Farnese", "Villa Medici", "Palazzo Barberini"]
+  }
+}
+	

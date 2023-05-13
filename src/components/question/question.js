@@ -14,7 +14,6 @@ function Question({ question, answers, onAnswer }) {
   }
 
   const [progress, setProgress] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((oldProgress) => {
@@ -22,9 +21,13 @@ function Question({ question, answers, onAnswer }) {
           clearInterval(interval);
           return 100;
         }
-        return oldProgress + 10;
+        return oldProgress + 1;
+        
       });
-    }, 1500);
+    }, 150);
+
+  answers.sort(() => Math.random() - 0.5);
+
 
     return () => clearInterval(interval);
   }, []);
@@ -37,6 +40,8 @@ function Question({ question, answers, onAnswer }) {
         typeof answer === "string" ? answer.length : answer.toString().length
       )
     ) * 5;
+
+  // Shuffle the answers randomly
 
   return (
     <Box

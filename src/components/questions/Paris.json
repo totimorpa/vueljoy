@@ -1,0 +1,62 @@
+{
+  "question1": {
+    "q": "What is the name of the famous tower in Paris that has become a symbol of the city?",
+    "a": ["Eiffel Tower", "Arc de Triomphe", "Louvre Pyramid", "Notre-Dame Cathedral"]
+  },
+  "question2": {
+    "q": "What is the name of the famous museum in Paris that is home to the Mona Lisa and other famous artworks?",
+    "a": ["The Louvre", "Musée d'Orsay", "Centre Pompidou", "Musée de l'Orangerie"]
+  },
+  "question3": {
+    "q": "What is the name of the famous cathedral in Paris that was badly damaged in a fire in 2019?",
+    "a": ["Notre-Dame Cathedral", "Sainte-Chapelle", "Sacré-Cœur Basilica", "La Madeleine"]
+  },
+  "question4": {
+    "q": "What is the name of the famous avenue in Paris that is home to luxury shops and cafes?",
+    "a": ["Champs-Élysées", "Boulevard Saint-Germain", "Avenue Montaigne", "Rue Saint-Honoré"]
+  },
+  "question5": {
+    "q": "What is the name of the famous cabaret in Paris that is known for its can-can dancers?",
+    "a": ["Moulin Rouge", "Lido de Paris", "Crazy Horse", "Paradis Latin"]
+  },
+  "question6": {
+    "q": "What is the name of the famous palace in Paris that was once the residence of French kings?",
+    "a": ["Versailles Palace", "Fontainebleau Palace", "Château de Vincennes", "Château de Chantilly"]
+  },
+  "question7": {
+    "q": "What is the name of the famous cemetery in Paris that is the final resting place of many famous people?",
+    "a": ["Père Lachaise Cemetery", "Montmartre Cemetery", "Passy Cemetery", "Montparnasse Cemetery"]
+  },
+  "question8": {
+    "q": "What is the name of the famous island in the middle of Paris that is home to Notre-Dame Cathedral?",
+    "a": ["Île de la Cité", "Île Saint-Louis", "Île aux Cygnes", "Île de la Jatte"]
+  },
+  "question9": {
+    "q": "What is the name of the famous department store in Paris that is known for its luxury goods?",
+    "a": ["Galeries Lafayette", "Le Bon Marché", "Printemps Haussmann", "La Samaritaine"]
+  },
+  "question10": {
+    "q": "What is the name of the famous bridge in Paris that is known for its ornate decoration?",
+    "a": ["Pont Alexandre III", "Pont Neuf", "Pont des Arts", "Pont de l'Alma"]
+  },
+  "question11": {
+    "q": "What is the name of the famous opera house in Paris that was built in the 19th century?",
+    "a": ["Palais Garnier", "Opéra Bastille", "Théâtre des Champs-Élysées", "Opéra Comique"]
+  },
+  "question12": {
+    "q": "What is the name of the famous art museum in Paris that features works by Monet, Renoir, and Degas?",
+    "a": ["Musée d'Orsay", "The Louvre", "Musée Rodin", "Musée de l'Orangerie"]
+  },
+  "question13": {
+    "q": "What is the name of the famous cabaret in Paris that was a popular spot for artists and writers in the early 20th century?",
+    "a": ["Le Chat Noir", "Moulin Rouge", "Crazy Horse", "Lido de Paris"]
+  },
+  "question14": {
+    "q": "What is the name of the famous park in Paris that is home to the Eiffel Tower?",
+    "a": ["Champ de Mars", "Jardin du Luxembourg", "Parc des Buttes-Chaumont", "Bois de Boulogne"]
+  },
+  "question15": {
+    "q": "What is the name of the famous street in Paris that is home to many art galleries and antique shops?",
+    "a": ["Rue Saint-Paul", "Rue des Francs-Bourgeois", "Rue de Rivoli", "Rue du Faubourg Saint-Honoré"]
+  }
+}

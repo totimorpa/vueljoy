@@ -1,0 +1,62 @@
+{
+  "question1": {
+    "q": "What is the name of the large public square in the center of Madrid that is known for its statue of King Philip III?",
+    "a": ["Plaza Mayor", "Puerta del Sol", "Plaza de España", "Plaza de Cibeles"]
+  },
+  "question2": {
+    "q": "What is the name of the famous art museum in Madrid that is home to works by Picasso, Dalí, and Miró?",
+    "a": ["Museo Nacional Centro de Arte Reina Sofía", "Museo del Prado", "Museo Thyssen-Bornemisza", "Museo Sorolla"]
+  },
+  "question3": {
+    "q": "What is the name of the famous park in Madrid that is home to a large lake and a statue of King Alfonso XII?",
+    "a": ["El Retiro", "Parque de la Casa de Campo", "Parque del Oeste", "Parque Juan Carlos I"]
+  },
+  "question4": {
+    "q": "What is the name of the famous bullfighting arena in Madrid?",
+    "a": ["Las Ventas", "Plaza de Toros de Valencia", "Plaza de Toros de Ronda", "Plaza de Toros de Seville"]
+  },
+  "question5": {
+    "q": "What is the name of the famous street in Madrid that is known for its high-end shops and restaurants?",
+    "a": ["Gran Vía", "Calle de Fuencarral", "Calle de Serrano", "Calle de Alcalá"]
+  },
+  "question6": {
+    "q": "What is the name of the famous cathedral in Madrid that is the seat of the Archbishop of Madrid?",
+    "a": ["Almudena Cathedral", "Toledo Cathedral", "Segovia Cathedral", "Ávila Cathedral"]
+  },
+  "question7": {
+    "q": "What is the name of the historic market in Madrid that is known for its fresh seafood and produce?",
+    "a": ["Mercado de San Miguel", "Mercado de San Antón", "Mercado de San Ildefonso", "Mercado de la Paz"]
+  },
+  "question8": {
+    "q": "What is the name of the famous monument in Madrid that is dedicated to King Alfonso XIII?",
+    "a": ["Monumento a Alfonso XIII", "Monumento a la Independencia", "Monumento a los Caídos", "Monumento a Colón"]
+  },
+  "question9": {
+    "q": "What is the name of the famous street in Madrid that is known for its tapas bars?",
+    "a": ["Calle de Cava Baja", "Calle de la Princesa", "Calle Mayor", "Calle de Hortaleza"]
+  },
+  "question10": {
+    "q": "What is the name of the famous art museum in Madrid that is home to works by Velázquez, Goya, and Rubens?",
+    "a": ["Museo del Prado", "Museo Nacional Centro de Arte Reina Sofía", "Museo Thyssen-Bornemisza", "Museo Sorolla"]
+  },
+  "question11": {
+    "q": "What is the name of the largest park in Madrid?",
+    "a": ["Retiro Park", "Casa de Campo", "El Capricho Park", "Juan Carlos I Park"]
+  },
+  "question12": {
+    "q": "In which neighborhood can you find the Plaza Mayor?",
+    "a": ["Sol", "Malasaña", "La Latina", "Chueca"]
+  },
+  "question13": {
+    "q": "What is the name of the stadium that Real Madrid plays in?",
+    "a": ["Vicente Calderón Stadium", "Santiago Bernabéu Stadium", "Camp Nou Stadium", "Wanda Metropolitano Stadium"]
+  },
+  "question14": {
+    "q": "What is the name of the museum that houses Picasso's masterpiece Guernica?",
+    "a": ["Museo del Prado", "Museo Nacional Centro de Arte Reina Sofía", "Thyssen-Bornemisza Museum", "Sorolla Museum"]
+  },
+  "question15": {
+    "q": "What is the name of the main street that goes through the center of Madrid?",
+    "a": ["Gran Vía", "Paseo del Prado", "Calle de Alcalá", "Avenida de América"]
+  }
+}

@@ -1,0 +1,64 @@
+I apologize for the mistake. Here are the corrected questions and answers:
+
+{
+  "question1": {
+    "q": "What is the name of the famous clock tower located at the Palace of Westminster?",
+    "a": ["Big Ben", "London Eye", "Tower Bridge", "St. Paul's Cathedral"]
+  },
+  "question2": {
+    "q": "What is the name of the river that flows through London?",
+    "a": ["Thames", "Seine", "Danube", "Amazon"]
+  },
+  "question3": {
+    "q": "What is the name of the residence of the British monarch in London?",
+    "a": ["Buckingham Palace", "Kensington Palace", "Westminster Abbey", "Tower of London"]
+  },
+  "question4": {
+    "q": "What is the name of the famous shopping street in London?",
+    "a": ["Oxford Street", "Champs-Élysées", "Fifth Avenue", "Rodeo Drive"]
+  },
+  "question5": {
+    "q": "What is the name of the museum that houses the Rosetta Stone and other ancient artifacts?",
+    "a": ["The British Museum", "The National Gallery", "The Tate Modern", "The Victoria and Albert Museum"]
+  },
+  "question6": {
+    "q": "What is the name of the tower that houses the Crown Jewels?",
+    "a": ["Tower of London", "Tower Bridge", "London Eye", "St. Paul's Cathedral"]
+  },
+  "question7": {
+    "q": "What is the name of the park that is home to Buckingham Palace?",
+    "a": ["St. James's Park", "Regent's Park", "Hyde Park", "Greenwich Park"]
+  },
+  "question8": {
+    "q": "What is the name of the underground railway system in London?",
+    "a": ["The Tube", "The Metro", "The Subway", "The Underground"]
+  },
+  "question9": {
+    "q": "What is the name of the famous concert venue located in South Kensington?",
+    "a": ["Royal Albert Hall", "The O2 Arena", "Wembley Stadium", "The SSE Arena, Wembley"]
+  },
+  "question10": {
+    "q": "What is the name of the famous bridge that is located near the Tower of London?",
+    "a": ["Tower Bridge", "London Bridge", "Golden Gate Bridge", "Sydney Harbour Bridge"]
+  },
+  "question11": {
+    "q": "What is the name of the area in London that is known for its theater district?",
+    "a": ["West End", "East End", "South Bank", "Covent Garden"]
+  },
+  "question12": {
+    "q": "What is the name of the palace that is the official residence of the Archbishop of Canterbury?",
+    "a": ["Lambeth Palace", "Buckingham Palace", "Kensington Palace", "Westminster Abbey"]
+  },
+  "question13": {
+    "q": "What is the name of the famous wax museum located in London?",
+    "a": ["Madame Tussauds", "The London Dungeon", "The Sherlock Holmes Museum", "The Harry Potter Experience"]
+  },
+  "question14": {
+    "q": "What is the name of the street that is famous for its high-end fashion boutiques?",
+    "a": ["Bond Street", "Regent Street", "Savile Row", "Carnaby Street"]
+  },
+  "question15": {
+    "q": "What is the name of the famous park in London that is home to many popular landmarks, including Speaker's Corner and Marble Arch?",
+    "a": ["Hyde Park", "Greenwich Park", "Regent's Park", "St. James's Park"]
+  }
+}
