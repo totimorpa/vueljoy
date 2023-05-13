@@ -7,13 +7,14 @@ import Ranking from "./components/ranking/ranking.js";
 import { useState } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
+import { AppBar } from "@mui/material";
 
 function App() {
   const [loadingGame, setLoadingGame] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
 
-  var sock = new SockJS("http://localhost:8080/ws");
+  var sock = new SockJS("http://192.168.253.20:8080/ws");
 
   let stompClient = Stomp.over(sock); //-----------------------
 
@@ -53,11 +54,15 @@ function App() {
       {},
       JSON.stringify({ name: name, seat: seat })
     );
+    setLoadingGame(true);
   }
 
   return (
     <div className="App">
-      <Login onLogin={onLogin}></Login>
+      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      {loadingGame && !gameStarted && (
+        <LoadingScreen prompt="Waiting for game to start" />
+      )}
       {/* <LoadingScreen prompt="Waiting for game to start" /> */}
       {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
       {/* <Ranking

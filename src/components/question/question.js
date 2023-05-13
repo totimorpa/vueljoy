@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Button, Box, Grid } from "@mui/material";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function Question({ question, answers, onAnswer }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -9,6 +10,8 @@ function Question({ question, answers, onAnswer }) {
     onAnswer(answer);
   }
 
+  const [progress, setProgress] = React.useState(0);
+
   return (
     <Box
       display="flex"
@@ -17,6 +20,7 @@ function Question({ question, answers, onAnswer }) {
       height="100vh"
       m={2}
     >
+      <LinearProgress color="inherit" />
       <Box mb={4}>
         <Typography variant="h4">{question}</Typography>
       </Box>
