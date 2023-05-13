@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 
 function Login({ onLogin }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [seat, setSeat] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    onLogin(username, password);
+    onLogin(name, seat);
   }
 
   return (
@@ -22,16 +22,16 @@ function Login({ onLogin }) {
           <TextField
             label="Name"
             variant="outlined"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
             margin="dense"
             required
           />
           <TextField
             label="Seat"
             variant="outlined"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            value={seat}
+            onChange={(event) => setSeat(event.target.value)}
             margin="dense"
             required
           />
