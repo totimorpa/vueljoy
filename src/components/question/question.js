@@ -22,7 +22,7 @@ function Question({ question, answers, onAnswer }) {
       </Box>
       <Grid container spacing={2} justify="center">
         {answers.map((answer) => (
-          <Grid item xs={12} sm={6} md={3} key={answer}>
+          <Grid item xs={6} sm={6} md={3} key={answer}>
             <Button
               variant={selectedAnswer === answer ? "contained" : "outlined"}
               color="primary"
