@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      {/* {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
       {loadingGame && !gameStarted && (
         <LoadingScreen prompt="Waiting for game to start" />
       )}
@@ -58,7 +58,7 @@ function App() {
           { id: 456321, name: "21C", score: 1000 },
           { id: 789654, name: "21D", score: 750 },
         ]}
-      ></Ranking> */}
+      ></Ranking>
       {/* <Question
         question={
           "What is the name of the art museum located in Trafalgar Square?"
@@ -70,7 +70,7 @@ function App() {
           "British Museum",
         ]}
         onAnswer={(answer) => console.log(answer)}
-      ></Question> */}
+      ></Question> }
     </div>
   );
 }
