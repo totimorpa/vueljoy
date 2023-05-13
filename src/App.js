@@ -3,10 +3,10 @@ import Login from "./components/login/login.js";
 import LoadingScreen from "./components/loading/loading.js";
 import Question from "./components/question/question.js";
 import Ranking from "./components/ranking/ranking.js";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import logo from "./components/title.png";
 
 function App() {
@@ -18,23 +18,18 @@ function App() {
   const [rankings, setRankings] = useState([]);
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
-  const [playerSeat, setPlayerSeat] = useState("");
+  const [playerName, setPlayerName] = useState("");
 
   var sock = new SockJS("http://192.168.253.20:8080/ws");
 
   let stompClient = Stomp.over(sock);
 
-  useEffect(() => {
-    stompClient.connect({}, function (frame) {
-      console.log("Connected: " + frame);
-      stompClient.subscribe("/topic/greetings", function (message) {
-        console.log(message);
-      });
-      stompClient.subscribe("/user/queue/welcome", function (message) {
-        console.log(message);
-      });
+  stompClient.connect({}, function (frame) {
+    console.log("Connected: " + frame);
+    stompClient.subscribe("/topic/greetings", function (message) {
+      console.log(message);
     });
-  }, []);
+  });
 
   function onLogin(name, seat) {
     console.log(name, seat);
@@ -44,49 +39,46 @@ function App() {
       {},
       JSON.stringify({ name: name, seat: seat })
     );
-    stompClient.send(
-      "/app/welcome",
-      {},
-      JSON.stringify({ name: name, seat: seat })
-    );
-    setPlayerSeat(name);
+    setPlayerName(name);
     setLoadingGame(true);
   }
 
   return (
     <div className="App">
-      <AppBar position="static" sx={{ height: 64 }}>
+      <AppBar position="fixed" sx={{ height: 64 }}>
         <Toolbar sx={{ justifyContent: "center", backgroundColor: "#ffcc00" }}>
           <img src={logo} alt="Logo" style={{ height: "100%" }} />
         </Toolbar>
       </AppBar>
-      {/*!loadingGame && !gameStarted && <Login onLogin={onLogin} />*/}
-      {/*loadingGame && !gameStarted && (
-        <LoadingScreen prompt="Waiting for game to start" />
-      )*/}
-      {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
-      {/* <Ranking
-        players={[
-          { id: 123242, name: "21A", score: 200 },
-          { id: 987654, name: "34F", score: 500 },
-          { id: 456321, name: "21C", score: 1000 },
-          { id: 789654, name: "21D", score: 750 },
-        ]}
-      ></Ranking> */}
-      {/*isQuestion &&*/ (
-        <Question
-          question={
-            "What is the name of the art museum located in Trafalgar Square?"
-          }
-          answers={[
-            "National Gallery",
-            "Tate Modern",
-            "Victoria and Albert Museum",
-            "British Museum",
+      <div className="App-body" style={{ paddingTop: "64px" }}>
+        {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+        {loadingGame && !gameStarted && (
+          <LoadingScreen prompt="Waiting for game to start" />
+        )}
+        {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
+        {/* <Ranking
+          players={[
+            { id: 123242, name: "21A", score: 200 },
+            { id: 987654, name: "34F", score: 500 },
+            { id: 456321, name: "21C", score: 1000 },
+            { id: 789654, name: "21D", score: 750 },
           ]}
-          onAnswer={(answer) => console.log(answer)}
-        ></Question>
-      )}
+        ></Ranking> */}
+        {isQuestion && (
+          <Question
+            question={
+              "What is the name of the art museum located in Trafalgar Square?"
+            }
+            answers={[
+              "National Gallery",
+              "Tate Modern",
+              "Victoria and Albert Museum",
+              "British Museum",
+            ]}
+            onAnswer={(answer) => console.log(answer)}
+          ></Question>
+        )}
+      </div>
     </div>
   );
 }
