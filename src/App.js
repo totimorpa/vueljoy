@@ -13,40 +13,25 @@ function App() {
   const [loadingGame, setLoadingGame] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
+  const [isQuestion, setIsQuestion] = useState(false);
+  const [isRanking, setIsRanking] = useState(false);
+  const [rankings, setRankings] = useState([]);
+  const [question, setQuestion] = useState("");
+  const [answers, setAnswers] = useState([]);
+  const [playerName, setPlayerName] = useState("");
 
   var sock = new SockJS("http://192.168.253.20:8080/ws");
 
-  let stompClient = Stomp.over(sock); //-----------------------
+  let stompClient = Stomp.over(sock);
 
-  sock.onopen = function () {
-    console.log("open");
-    //sock.send("test");
-
-    stompClient.subscribe("/topic/greetings", function (greeting) {
-      console.log(greeting);
-      //you can execute any function here
+  stompClient.connect({}, function (frame) {
+    console.log("Connected: " + frame);
+    stompClient.subscribe("/topic/greetings", function (message) {
+      console.log(message);
     });
-  };
-
-  //   stompClient.connect({}, function (frame) {
-  //     console.log('Connected: ' + frame);
-  //     stompClient.subscribe('/topic/greetings', function (greeting) {
-  //       console.log(greeting);
-  //       //you can execute any function here
-  //     });
-  //  });
-
-  // sock.onmessage = function (e) {
-  //   console.log("message", e.data);
-  //   sock.close();
-  // };
-
-  // sock.onclose = function () {
-  //   console.log("close");
-  // };
+  });
 
   function onLogin(name, seat) {
-    console.log("onLogin");
     console.log(name, seat);
     //sock.send(name, seat);
     stompClient.send(
@@ -54,26 +39,26 @@ function App() {
       {},
       JSON.stringify({ name: name, seat: seat })
     );
+    setPlayerName(name);
     setLoadingGame(true);
   }
 
   return (
     <div className="App">
-      {/* {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
       {loadingGame && !gameStarted && (
         <LoadingScreen prompt="Waiting for game to start" />
-      )} */}
+      )}
       {/* <LoadingScreen prompt="Waiting for game to start" /> */}
       {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
-      <Ranking
+      {/* <Ranking
         players={[
-          { id: 123242, name: "Row 1", score: 200 },
-          { id: 987654, name: "Row 2", score: 500 },
-          { id: 456321, name: "Row 3", score: 1000 },
-          { id: 789654, name: "Row 4", score: 750 },
-          { id: 234567, name: "Row 5", score: 1500 },
+          { id: 123242, name: "21A", score: 200 },
+          { id: 987654, name: "34F", score: 500 },
+          { id: 456321, name: "21C", score: 1000 },
+          { id: 789654, name: "21D", score: 750 },
         ]}
-      ></Ranking>
+      ></Ranking> */}
       {/* <Question
         question={
           "What is the name of the art museum located in Trafalgar Square?"

@@ -15,6 +15,7 @@ function Ranking({ players }) {
       m={3}
       p={2}
       sx={{ backgroundColor: "#f5f5f5" }}
+      borderRadius={2}
     >
       <Box m={2} mt={2}>
         {sortedPlayers.map((player, index) => (
@@ -44,25 +45,13 @@ function Ranking({ players }) {
               </Typography>
               <Box sx={{ width: 80 }}>
                 {index === 0 && (
-                  <img
-                    src={gold}
-                    alt="gold"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={gold} alt="gold" style={{ width: "100%" }} />
                 )}
                 {index === 1 && (
-                  <img
-                    src={silver}
-                    alt="silver"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={silver} alt="silver" style={{ width: "100%" }} />
                 )}
                 {index === 2 && (
-                  <img
-                    src={bronze}
-                    alt="bronze"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={bronze} alt="bronze" style={{ width: "100%" }} />
                 )}
               </Box>
             </CardContent>
