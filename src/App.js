@@ -3,7 +3,7 @@ import Login from "./components/login/login.js";
 import LoadingScreen from "./components/loading/loading.js";
 import Question from "./components/question/question.js";
 import Ranking from "./components/ranking/ranking.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import { AppBar, Toolbar, Box, Typography } from "@mui/material";
@@ -24,12 +24,19 @@ function App() {
 
   let stompClient = Stomp.over(sock);
 
-  stompClient.connect({}, function (frame) {
-    console.log("Connected: " + frame);
-    stompClient.subscribe("/topic/greetings", function (message) {
-      console.log(message);
+  useEffect(() => {
+    stompClient.connect({}, function (frame) {
+      console.log("Connected: " + frame);
+      stompClient.subscribe("/topic/brodcast", function (message) {
+        console.log(message);
+        if (message.type === "question") {
+          console.log("question");
+        } else if (message.type === "ranking") {
+          console.log("ranking");
+        }
+      });
     });
-  });
+  }, []);
 
   function onLogin(name, seat) {
     console.log(name, seat);
