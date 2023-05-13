@@ -95,7 +95,7 @@ function Question({ question, answers, onAnswer }) {
           sx={{
             position: "absolute",
             right: `${100 - progress}%`,
-            top: "-30px",
+            top: "-15px",
           }}
         >
           <img src={AirplaneImg} alt="Airplane" height="40px" />

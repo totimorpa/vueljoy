@@ -7,7 +7,7 @@ import { useState } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import { AppBar, Toolbar, Typography } from "@mui/material";
-import logo from "./logo.png";
+import logo from "./components/title.png";
 
 function App() {
   const [loadingGame, setLoadingGame] = useState(false);
