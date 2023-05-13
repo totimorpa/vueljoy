@@ -46,11 +46,11 @@ function App() {
   return (
     <div className="App">
       <AppBar position="static" sx={{ height: 64 }}>
-        <Toolbar sx={{ justifyContent: "center" }}>
+        <Toolbar sx={{ justifyContent: "center", backgroundColor: "#ffcc00" }}>
           <img src={logo} alt="Logo" style={{ height: "100%" }} />
         </Toolbar>
       </AppBar>
-      {/*!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
       {loadingGame && !gameStarted && (
         <LoadingScreen prompt="Waiting for game to start" />
       )}
@@ -63,18 +63,20 @@ function App() {
           { id: 789654, name: "21D", score: 750 },
         ]}
       ></Ranking> */}
-      {<Question
-        question={
-          "What is the name of the art museum located in Trafalgar Square?"
-        }
-        answers={[
-          "National Gallery",
-          "Tate Modern",
-          "Victoria and Albert Museum",
-          "British Museum",
-        ]}
-        onAnswer={(answer) => console.log(answer)}
-      ></Question>}
+      {isQuestion && (
+        <Question
+          question={
+            "What is the name of the art museum located in Trafalgar Square?"
+          }
+          answers={[
+            "National Gallery",
+            "Tate Modern",
+            "Victoria and Albert Museum",
+            "British Museum",
+          ]}
+          onAnswer={(answer) => console.log(answer)}
+        ></Question>
+      )}
     </div>
   );
 }

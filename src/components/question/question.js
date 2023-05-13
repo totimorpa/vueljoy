@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Button, Box, Grid, Card } from "@mui/material";
-import LinearProgress, { linearProgressClasses } from "@mui/material/LinearProgress";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
 import AirplaneImg from "./Airplane.png";
 
 function Question({ question, answers, onAnswer }) {
@@ -34,11 +36,10 @@ function Question({ question, answers, onAnswer }) {
       ...answers.map((answer) =>
         typeof answer === "string" ? answer.length : answer.toString().length
       )
-    ) * 10;
+    ) * 5;
 
   return (
     <Box
-      display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
