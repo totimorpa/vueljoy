@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Button, Box, Grid } from "@mui/material";
+import { Typography, Button, Box, Grid, Card } from "@mui/material";
 import LinearProgress from "@mui/material/LinearProgress";
 
 function Question({ question, answers, onAnswer }) {
@@ -28,35 +28,51 @@ function Question({ question, answers, onAnswer }) {
     };
   }, []);
 
+  const buttonColors = [
+    "#f44336","blue","green","purple"];
+
+  const answerHeight = Math.max(
+    ...answers.map((answer) =>
+      typeof answer === "string" ? answer.length : answer.toString().length
+    )
+  ) * 10;
+
   return (
     <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
+      justifyContent="center"
       height="100vh"
       m={2}
     >
-      <Box mb={4}>
-        <Typography variant="h4">{question}</Typography>
-      </Box>
-      <Box mb={4}>
-        <Grid container spacing={2} justify="center">
-          {answers.map((answer) => (
-            <Grid item xs={6} sm={6} md={3} key={answer}>
-              <Button
-                variant={selectedAnswer === answer ? "contained" : "outlined"}
-                color="primary"
-                fullWidth
-                disableElevation
-                onClick={() => handleAnswer(answer)}
-              >
-                {answer}
-              </Button>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-      <Box sx={{ width: "100%" }}>
+      <Card sx={{ p: 2 }}>
+        <Typography variant="h4" align="center">
+          {question}
+        </Typography>
+        <Box mt={4}>
+          <Grid container spacing={2} justifyContent="center">
+            {answers.map((answer, index) => (
+              <Grid item xs={6} key={answer}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  disableElevation
+                  sx={{
+                    height: answerHeight,
+                    backgroundColor: buttonColors[index],
+                  }}
+                  onClick={() => handleAnswer(answer)}
+                >
+                  <Typography variant="h5">{answer}</Typography>
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Card>
+      <Box sx={{ width: "100%", mt: 2 }}>
         <LinearProgress variant="determinate" value={progress} />
       </Box>
     </Box>
