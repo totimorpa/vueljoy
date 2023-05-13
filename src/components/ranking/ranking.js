@@ -1,5 +1,8 @@
 import React from "react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
+import gold from "./gold.png";
+import silver from "./silver.png";
+import bronze from "./bronze.png";
 
 function Ranking({ players }) {
   const colors = ["#FFD700", "#C0C0C0", "#CD7F32", "#bada55", "#FF69B4"];
@@ -24,13 +27,44 @@ function Ranking({ players }) {
               bgcolor: colors[index % colors.length],
             }}
           >
-            <CardContent>
-              <Typography variant="h6" component="div">
+            <CardContent sx={{ display: "flex", alignItems: "center" }}>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ flex: "1 1 auto", minWidth: 0 }}
+              >
                 {player.name}
+                <Typography
+                  variant="body1"
+                  sx={{ fontSize: 14 }}
+                  color="text.secondary"
+                >
+                  Score: {player.score}
+                </Typography>
               </Typography>
-              <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                Score: {player.score}
-              </Typography>
+              <Box sx={{ width: 80 }}>
+                {index === 0 && (
+                  <img
+                    src={gold}
+                    alt="gold"
+                    style={{ width: "100%" }}
+                  />
+                )}
+                {index === 1 && (
+                  <img
+                    src={silver}
+                    alt="silver"
+                    style={{ width: "100%" }}
+                  />
+                )}
+                {index === 2 && (
+                  <img
+                    src={bronze}
+                    alt="bronze"
+                    style={{ width: "100%" }}
+                  />
+                )}
+              </Box>
             </CardContent>
           </Card>
         ))}
