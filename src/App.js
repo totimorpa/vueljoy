@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/login/login.js";
-import LoadingScreen from "./components/loading/loading.js";
+import LoadingScreen from "./components/loading/loading";
 import Question from "./components/question/question.js";
 import Ranking from "./components/ranking/ranking.js";
 import { useState } from "react";
@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      <Login onLogin={onLogin}></Login>
-      {/* <LoadingScreen prompt="Waiting for game to start" /> */}
+      {/* <Login onLogin={onLogin}></Login> */}
+      <LoadingScreen prompt="Waiting for game to start" />
       {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
       {/* <Ranking
         players={[
