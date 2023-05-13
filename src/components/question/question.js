@@ -98,7 +98,7 @@ function Question({ question, answers, onAnswer }) {
             top: "-30px",
           }}
         >
-          <img src={AirplaneImg} alt="Airplane" height="80px" />
+          <img src={AirplaneImg} alt="Airplane" height="40px" />
         </Box>
       </Box>
     </Box>

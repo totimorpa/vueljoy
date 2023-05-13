@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/login/login.js";
 import LoadingScreen from "./components/loading/loading.js";
@@ -7,7 +6,8 @@ import Ranking from "./components/ranking/ranking.js";
 import { useState } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
-import { AppBar } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import logo from "./logo.png";
 
 function App() {
   const [loadingGame, setLoadingGame] = useState(false);
@@ -45,7 +45,12 @@ function App() {
 
   return (
     <div className="App">
-      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      <AppBar position="static" sx={{ height: 64 }}>
+        <Toolbar sx={{ justifyContent: "center" }}>
+          <img src={logo} alt="Logo" style={{ height: "100%" }} />
+        </Toolbar>
+      </AppBar>
+      {/*!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
       {loadingGame && !gameStarted && (
         <LoadingScreen prompt="Waiting for game to start" />
       )}
@@ -58,7 +63,7 @@ function App() {
           { id: 789654, name: "21D", score: 750 },
         ]}
       ></Ranking> */}
-      {/* <Question
+      {<Question
         question={
           "What is the name of the art museum located in Trafalgar Square?"
         }
@@ -69,7 +74,7 @@ function App() {
           "British Museum",
         ]}
         onAnswer={(answer) => console.log(answer)}
-      ></Question> */}
+      ></Question>}
     </div>
   );
 }
