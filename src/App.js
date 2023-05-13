@@ -1,42 +1,64 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/login/login.js";
-import LoadingScreen from "./components/loading/loading";
+import LoadingScreen from "./components/loading/loading.js";
 import Question from "./components/question/question.js";
 import Ranking from "./components/ranking/ranking.js";
 import { useState } from "react";
 import SockJS from "sockjs-client";
+import Stomp from "stompjs";
 
 function App() {
   const [loadingGame, setLoadingGame] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
 
-  var sock = new SockJS("http://192.168.253.20:8080/gs-guide-websocket");
+  var sock = new SockJS("http://localhost:8080/ws");
+
+  let stompClient = Stomp.over(sock); //-----------------------
 
   sock.onopen = function () {
     console.log("open");
-    sock.send("test");
+    //sock.send("test");
+
+    stompClient.subscribe("/topic/greetings", function (greeting) {
+      console.log(greeting);
+      //you can execute any function here
+    });
   };
 
-  sock.onmessage = function (e) {
-    console.log("message", e.data);
-    sock.close();
-  };
+  //   stompClient.connect({}, function (frame) {
+  //     console.log('Connected: ' + frame);
+  //     stompClient.subscribe('/topic/greetings', function (greeting) {
+  //       console.log(greeting);
+  //       //you can execute any function here
+  //     });
+  //  });
 
-  sock.onclose = function () {
-    console.log("close");
-  };
+  // sock.onmessage = function (e) {
+  //   console.log("message", e.data);
+  //   sock.close();
+  // };
+
+  // sock.onclose = function () {
+  //   console.log("close");
+  // };
 
   function onLogin(name, seat) {
     console.log("onLogin");
     console.log(name, seat);
+    //sock.send(name, seat);
+    stompClient.send(
+      "/app/register",
+      {},
+      JSON.stringify({ name: name, seat: seat })
+    );
   }
 
   return (
     <div className="App">
-      {/* <Login onLogin={onLogin}></Login> */}
-      <LoadingScreen prompt="Waiting for game to start" />
+      <Login onLogin={onLogin}></Login>
+      {/* <LoadingScreen prompt="Waiting for game to start" /> */}
       {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
       {/* <Ranking
         players={[

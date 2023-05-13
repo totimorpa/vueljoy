@@ -1,43 +1,41 @@
 import React from "react";
-import {
-  Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
-
-const tableStyle = {
-  minWidth: 650,
-};
+import { Card, CardContent, Typography, Box } from "@mui/material";
 
 function Ranking({ players }) {
+  const colors = ["#FFD700", "#C0C0C0", "#CD7F32", "#bada55", "#FF69B4"];
+  const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
+
   return (
-    <Paper>
-      <TableContainer>
-        <Table style={tableStyle}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Player</TableCell>
-              <TableCell align="right">Score</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {players.map((player) => (
-              <TableRow key={player.id}>
-                <TableCell component="th" scope="row">
-                  {player.name}
-                </TableCell>
-                <TableCell align="right">{player.score}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
+    <Box
+      flexDirection="column"
+      alignItems="center"
+      m={3}
+      p={2}
+      sx={{ backgroundColor: "#f5f5f5" }}
+    >
+      <Box m={2} mt={2}>
+        {sortedPlayers.map((player, index) => (
+          <Card
+            key={player.id}
+            variant="outlined"
+            sx={{
+              width: "100%",
+              my: 1,
+              bgcolor: colors[index % colors.length],
+            }}
+          >
+            <CardContent>
+              <Typography variant="h6" component="div">
+                {player.name}
+              </Typography>
+              <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                Score: {player.score}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </Box>
+    </Box>
   );
 }
 
