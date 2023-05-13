@@ -3,7 +3,7 @@ import Login from "./components/login/login.js";
 import LoadingScreen from "./components/loading/loading.js";
 import Question from "./components/question/question.js";
 import Ranking from "./components/ranking/ranking.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import { AppBar, Toolbar, Typography } from "@mui/material";
@@ -18,18 +18,23 @@ function App() {
   const [rankings, setRankings] = useState([]);
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
-  const [playerName, setPlayerName] = useState("");
+  const [playerSeat, setPlayerSeat] = useState("");
 
   var sock = new SockJS("http://192.168.253.20:8080/ws");
 
   let stompClient = Stomp.over(sock);
 
-  stompClient.connect({}, function (frame) {
-    console.log("Connected: " + frame);
-    stompClient.subscribe("/topic/greetings", function (message) {
-      console.log(message);
+  useEffect(() => {
+    stompClient.connect({}, function (frame) {
+      console.log("Connected: " + frame);
+      stompClient.subscribe("/topic/greetings", function (message) {
+        console.log(message);
+      });
+      stompClient.subscribe("/user/queue/welcome", function (message) {
+        console.log(message);
+      });
     });
-  });
+  }, []);
 
   function onLogin(name, seat) {
     console.log(name, seat);
@@ -39,7 +44,12 @@ function App() {
       {},
       JSON.stringify({ name: name, seat: seat })
     );
-    setPlayerName(name);
+    stompClient.send(
+      "/app/welcome",
+      {},
+      JSON.stringify({ name: name, seat: seat })
+    );
+    setPlayerSeat(name);
     setLoadingGame(true);
   }
 
