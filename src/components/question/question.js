@@ -15,6 +15,7 @@ function Question({ question, answers, onAnswer }) {
       flexDirection="column"
       alignItems="center"
       height="100vh"
+      m={2}
     >
       <Box mb={4}>
         <Typography variant="h4">{question}</Typography>

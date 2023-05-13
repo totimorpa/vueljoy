@@ -10,21 +10,15 @@ import {
   Paper,
 } from "@mui/material";
 
-import makeStyles from "@mui/material";
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+const tableStyle = {
+  minWidth: 650,
+};
 
 function Ranking({ players }) {
-  const classes = useStyles();
-
   return (
     <Paper>
       <TableContainer>
-        <Table className={classes.table}>
+        <Table style={tableStyle}>
           <TableHead>
             <TableRow>
               <TableCell>Player</TableCell>

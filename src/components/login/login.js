@@ -28,7 +28,7 @@ function Login({ onLogin }) {
             required
           />
           <TextField
-            label="Sit Row"
+            label="Seat"
             variant="outlined"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -41,7 +41,7 @@ function Login({ onLogin }) {
             color="primary"
             disableElevation
           >
-            Log in
+            Join
           </Button>
         </Box>
       </form>
