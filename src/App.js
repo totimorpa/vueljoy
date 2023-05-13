@@ -59,13 +59,13 @@ function App() {
 
   return (
     <div className="App">
-      {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
+      {/* {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
       {loadingGame && !gameStarted && (
         <LoadingScreen prompt="Waiting for game to start" />
-      )}
+      )} */}
       {/* <LoadingScreen prompt="Waiting for game to start" /> */}
       {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
-      {/* <Ranking
+      <Ranking
         players={[
           { id: 123242, name: "Row 1", score: 200 },
           { id: 987654, name: "Row 2", score: 500 },
@@ -73,7 +73,7 @@ function App() {
           { id: 789654, name: "Row 4", score: 750 },
           { id: 234567, name: "Row 5", score: 1500 },
         ]}
-      ></Ranking> */}
+      ></Ranking>
       {/* <Question
         question={
           "What is the name of the art museum located in Trafalgar Square?"
