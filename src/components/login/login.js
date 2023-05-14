@@ -28,7 +28,7 @@ function Login({ onLogin }) {
             required
           />
           <TextField
-            label="Seat"
+            label="Seat (24A)"
             variant="outlined"
             value={seat}
             onChange={(event) => setSeat(event.target.value)}
