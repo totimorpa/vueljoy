@@ -40,7 +40,7 @@ function App() {
         console.log(obj.type);
 
         if (obj.type === "q") {
-          if (obj.questionNumber >= 15) {
+          if (obj.questionNumber >= 16) {
             setIsQuestion(false);
             setIsRanking(true);
             setWaitingAnswers(false);
@@ -51,9 +51,9 @@ function App() {
           setGameStarted(true);
           setIsRanking(false);
           setIsQuestion(true);
-          setCorrectAnswer(data[`question${obj.questionNumber + 1}`]["a"][0]);
-          setQuestion(data[`question${obj.questionNumber + 1}`]["q"]);
-          setAnswers(data[`question${obj.questionNumber + 1}`]["a"]);
+          setCorrectAnswer(data[`question${obj.questionNumber}`]["a"][0]);
+          setQuestion(data[`question${obj.questionNumber}`]["q"]);
+          setAnswers(data[`question${obj.questionNumber}`]["a"]);
           setWaitingTime(Date.now());
         } else if (obj.type === "r") {
           console.log("ranking");

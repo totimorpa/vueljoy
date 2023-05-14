@@ -36,7 +36,7 @@ function Ranking({ players }) {
                 component="div"
                 sx={{ flex: "1 1 auto", minWidth: 0 }}
               >
-                {player.name}
+                Passanger: {player.seat}
                 <Typography
                   variant="body1"
                   sx={{ fontSize: 14 }}

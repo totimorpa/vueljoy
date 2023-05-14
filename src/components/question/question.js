@@ -78,7 +78,7 @@ function Question({ question, answers, onAnswer }) {
                   }}
                   onClick={() => handleAnswer(answer)}
                 >
-                  <Typography variant="h5" sx={{ overflowWrap: "anywhere" }}>
+                  <Typography variant="h6" sx={{ overflowWrap: "anywhere" }}>
                     {answer}
                   </Typography>
                 </Button>
