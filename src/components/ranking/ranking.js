@@ -6,7 +6,9 @@ import bronze from "./bronze.png";
 
 function Ranking({ players }) {
   const colors = ["#FFD700", "#C0C0C0", "#CD7F32", "#bada55", "#FF69B4"];
-  const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
+
+  const jsonArray = Object.values(players).map((obj) => obj);
+  const sortedPlayers = [...jsonArray].sort((a, b) => b.score - a.score);
 
   return (
     <Box

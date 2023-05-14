@@ -16,12 +16,7 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [isQuestion, setIsQuestion] = useState(false);
   const [isRanking, setIsRanking] = useState(false);
-  const [rankings, setRankings] = useState([
-    { id: 123242, name: "21A", score: 200 },
-    { id: 987654, name: "34F", score: 500 },
-    { id: 456321, name: "21C", score: 1000 },
-    { id: 789654, name: "21D", score: 750 },
-  ]);
+  const [rankings, setRankings] = useState({});
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
 
@@ -64,6 +59,7 @@ function App() {
           console.log("ranking");
           setIsQuestion(false);
           setIsRanking(true);
+          setRankings(obj.r);
           setWaitingAnswers(false);
         }
       });

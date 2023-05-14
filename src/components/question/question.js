@@ -17,11 +17,11 @@ function Question({ question, answers, onAnswer }) {
         if (oldProgress >= 100) {
           clearInterval(interval);
           handleAnswer(null);
-          return 50;
+          return 70;
         }
         return oldProgress + 1;
       });
-    }, 50);
+    }, 70);
 
     answers.sort(() => Math.random() - 0.5);
 
