@@ -5,7 +5,12 @@
   },
   "question2": {
     "q": "What is the name of the famous street in Barcelona that is known for its restaurants and nightlife?",
-    "a": ["La Rambla", "Passeig de Gracia", "Diagonal Avenue", "Placa Catalunya"]
+    "a": [
+      "La Rambla",
+      "Passeig de Gracia",
+      "Diagonal Avenue",
+      "Placa Catalunya"
+    ]
   },
   "question3": {
     "q": "What is the name of the famous park designed by Antoni Gaudi that features colorful mosaics and sculptures?",
@@ -17,7 +22,12 @@
   },
   "question5": {
     "q": "What is the name of the famous market in Barcelona that sells fresh produce, seafood, and souvenirs?",
-    "a": ["La Boqueria", "Mercat de Sant Antoni", "Mercat de la Concepcio", "Mercat del Ninot"]
+    "a": [
+      "La Boqueria",
+      "Mercat de Sant Antoni",
+      "Mercat de la Concepcio",
+      "Mercat del Ninot"
+    ]
   },
   "question6": {
     "q": "What is the name of the famous square in Barcelona that is known for its street performers and human statues?",
@@ -25,7 +35,12 @@
   },
   "question7": {
     "q": "What is the name of the famous museum in Barcelona that features the works of Pablo Picasso?",
-    "a": ["Picasso Museum", "Joan Miro Foundation", "Barcelona Museum of Contemporary Art", "National Art Museum of Catalonia"]
+    "a": [
+      "Picasso Museum",
+      "Joan Miro Foundation",
+      "Barcelona Museum of Contemporary Art",
+      "National Art Museum of Catalonia"
+    ]
   },
   "question8": {
     "q": "What is the name of the famous hill in Barcelona that offers panoramic views of the city?",
@@ -33,11 +48,21 @@
   },
   "question9": {
     "q": "What is the name of the famous boulevard in Barcelona that is known for its luxury shops and architecture?",
-    "a": ["Passeig de Gracia", "Avinguda Diagonal", "Rambla de Catalunya", "Gran Via de les Corts Catalanes"]
+    "a": [
+      "Passeig de Gracia",
+      "Avinguda Diagonal",
+      "Rambla de Catalunya",
+      "Gran Via de les Corts Catalanes"
+    ]
   },
   "question10": {
     "q": "What is the name of the famous fountain in Barcelona that features a colorful light and music show at night?",
-    "a": ["Magic Fountain", "Montjuic Fountain", "Ciutadella Fountain", "Barceloneta Fountain"]
+    "a": [
+      "Magic Fountain",
+      "Montjuic Fountain",
+      "Ciutadella Fountain",
+      "Barceloneta Fountain"
+    ]
   },
   "question11": {
     "q": "What is the name of the famous church in Barcelona that features a rooftop terrace with panoramic views?",
@@ -49,14 +74,29 @@
   },
   "question13": {
     "q": "What is the name of the famous cathedral in Barcelona that features Gothic architecture?",
-    "a": ["Barcelona Cathedral", "Sagrada Familia", "Santa Maria del Mar", "Basilica de Santa Maria del Pi"]
+    "a": [
+      "Barcelona Cathedral",
+      "Sagrada Familia",
+      "Santa Maria del Mar",
+      "Basilica de Santa Maria del Pi"
+    ]
   },
   "question14": {
     "q": "What is the name of the famous beach in Barcelona that is known for its lively atmosphere?",
-    "a": ["Barceloneta Beach", "Bogatell Beach", "Nova Icaria Beach", "Mar Bella Beach"]
+    "a": [
+      "Barceloneta Beach",
+      "Bogatell Beach",
+      "Nova Icaria Beach",
+      "Mar Bella Beach"
+    ]
   },
   "question15": {
     "q": "What is the name of the famous park in Barcelona that is home to many popular landmarks, including the Spanish Village and the National Art Museum of Catalonia?",
-    "a": ["Montjuic Park", "Ciutadella Park", "Laberint d'Horta Park", "Park Guell"]
+    "a": [
+      "Montjuic Park",
+      "Ciutadella Park",
+      "Laberint d'Horta Park",
+      "Park Guell"
+    ]
   }
 }

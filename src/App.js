@@ -6,19 +6,29 @@ import Ranking from "./components/ranking/ranking.js";
 import { useState, useEffect } from "react";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
-import { AppBar, Toolbar, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import logo from "./components/title.png";
+import data from "./components/questions/Barcelona.json";
 
 function App() {
   const [loadingGame, setLoadingGame] = useState(false);
+  const [waitingAnswers, setWaitingAnswers] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
-  const [gameEnded, setGameEnded] = useState(false);
   const [isQuestion, setIsQuestion] = useState(false);
   const [isRanking, setIsRanking] = useState(false);
-  const [rankings, setRankings] = useState([]);
+  const [rankings, setRankings] = useState([
+    { id: 123242, name: "21A", score: 200 },
+    { id: 987654, name: "34F", score: 500 },
+    { id: 456321, name: "21C", score: 1000 },
+    { id: 789654, name: "21D", score: 750 },
+  ]);
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
-  const [playerName, setPlayerName] = useState("");
+
+  const [correctAnswer, setCorrectAnswer] = useState(answers[0]);
+  const [playerSeat, setPlayerSeat] = useState("11A");
+  const [waitingTime, setWaitingTime] = useState(Date.now());
+  const [waitingProp, setWaitingProp] = useState("");
 
   var sock = new SockJS("http://192.168.253.20:8080/ws");
 
@@ -27,12 +37,34 @@ function App() {
   useEffect(() => {
     stompClient.connect({}, function (frame) {
       console.log("Connected: " + frame);
-      stompClient.subscribe("/topic/brodcast", function (message) {
-        console.log(message);
-        if (message.type === "question") {
+      stompClient.subscribe("/topic/broadcast", function (message) {
+        if (message.body === "FIRE") {
+          return;
+        }
+        const obj = JSON.parse(message.body);
+        console.log(obj.type);
+
+        if (obj.type === "q") {
+          if (obj.questionNumber >= 15) {
+            setIsQuestion(false);
+            setIsRanking(true);
+            setWaitingAnswers(false);
+            return;
+          }
           console.log("question");
-        } else if (message.type === "ranking") {
+          setWaitingAnswers(false);
+          setGameStarted(true);
+          setIsRanking(false);
+          setIsQuestion(true);
+          setCorrectAnswer(data[`question${obj.questionNumber + 1}`]["a"][0]);
+          setQuestion(data[`question${obj.questionNumber + 1}`]["q"]);
+          setAnswers(data[`question${obj.questionNumber + 1}`]["a"]);
+          setWaitingTime(Date.now());
+        } else if (obj.type === "r") {
           console.log("ranking");
+          setIsQuestion(false);
+          setIsRanking(true);
+          setWaitingAnswers(false);
         }
       });
     });
@@ -46,8 +78,29 @@ function App() {
       {},
       JSON.stringify({ name: name, seat: seat })
     );
-    setPlayerName(name);
+    setPlayerSeat(seat);
     setLoadingGame(true);
+  }
+
+  function onAnswer(answer) {
+    console.log(answer);
+    console.log(correctAnswer);
+    console.log(answer === answers[0]);
+    console.log(Date.now() - waitingTime);
+    setWaitingProp(
+      answer === null ? "Oops, too slow!" : "WOW! You were quick. Wait..."
+    );
+    stompClient.send(
+      "/app/submit-answer",
+      {},
+      JSON.stringify({
+        seat: playerSeat,
+        isCorrect: answer === correctAnswer,
+        time: Date.now() - waitingTime,
+      })
+    );
+    setIsQuestion(false);
+    setWaitingAnswers(true);
   }
 
   return (
@@ -60,29 +113,15 @@ function App() {
       <div className="App-body" style={{ paddingTop: "64px" }}>
         {!loadingGame && !gameStarted && <Login onLogin={onLogin} />}
         {loadingGame && !gameStarted && (
-          <LoadingScreen prompt="Waiting for game to start" />
+          <LoadingScreen prop="Waiting for game to start" />
         )}
-        {/* <LoadingScreen prompt="Wainting for everyone to answer" /> */}
-        {/* <Ranking
-          players={[
-            { id: 123242, name: "21A", score: 200 },
-            { id: 987654, name: "34F", score: 500 },
-            { id: 456321, name: "21C", score: 1000 },
-            { id: 789654, name: "21D", score: 750 },
-          ]}
-        ></Ranking> */}
-        {isQuestion && (
+        {waitingAnswers && gameStarted && <LoadingScreen prop={waitingProp} />}
+        {isRanking && gameStarted && <Ranking players={rankings}></Ranking>}
+        {isQuestion && gameStarted && (
           <Question
-            question={
-              "What is the name of the art museum located in Trafalgar Square?"
-            }
-            answers={[
-              "National Gallery",
-              "Tate Modern",
-              "Victoria and Albert Museum",
-              "British Museum",
-            ]}
-            onAnswer={(answer) => console.log(answer)}
+            question={question}
+            answers={answers}
+            onAnswer={onAnswer}
           ></Question>
         )}
       </div>

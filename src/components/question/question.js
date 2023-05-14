@@ -6,10 +6,7 @@ import LinearProgress, {
 import AirplaneImg from "./Airplane.png";
 
 function Question({ question, answers, onAnswer }) {
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-
   function handleAnswer(answer) {
-    setSelectedAnswer(answer);
     onAnswer(answer);
   }
 
@@ -19,15 +16,14 @@ function Question({ question, answers, onAnswer }) {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           clearInterval(interval);
-          return 100;
+          handleAnswer(null);
+          return 50;
         }
         return oldProgress + 1;
-        
       });
-    }, 150);
+    }, 50);
 
-  answers.sort(() => Math.random() - 0.5);
-
+    answers.sort(() => Math.random() - 0.5);
 
     return () => clearInterval(interval);
   }, []);
@@ -39,7 +35,7 @@ function Question({ question, answers, onAnswer }) {
       ...answers.map((answer) =>
         typeof answer === "string" ? answer.length : answer.toString().length
       )
-    ) * 5;
+    ) * 7;
 
   // Shuffle the answers randomly
 

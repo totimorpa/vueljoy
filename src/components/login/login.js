@@ -41,7 +41,7 @@ function Login({ onLogin }) {
             color="primary"
             disableElevation
           >
-            Join
+            Join Game
           </Button>
         </Box>
       </form>

@@ -1,9 +1,9 @@
 import React from "react";
-import { CircularProgress, Typography, Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import "./loading.css";
 import banana from "./banana.png";
 
-function LoadingScreen({ prompt }) {
+function LoadingScreen({ prop }) {
   return (
     <Box
       display="flex"
@@ -15,7 +15,7 @@ function LoadingScreen({ prompt }) {
       <img src={banana} className="App-logo" alt="logo"></img>
       <Box mt={2}>
         <Typography variant="h6" align="center">
-          {prompt}
+          {prop}
         </Typography>
       </Box>
     </Box>
